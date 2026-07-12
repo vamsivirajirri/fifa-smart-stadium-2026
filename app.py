@@ -1,5 +1,4 @@
 import os
-import streamlit as pd
 import streamlit as st
 
 # -------------------------------------------------------------------
@@ -36,7 +35,7 @@ def get_ai_client():
         import google.generativeai as genai
 
         genai.configure(api_key=api_key)
-        # Attempt to target standard base model
+        # Target standard base model
         return genai.GenerativeModel("gemini-1.5-flash")
     except Exception:
         return None
