@@ -98,11 +98,11 @@ with col_right:
         with st.chat_message(chat["role"]):
             st.write(chat["text"])
             
-    # Capture prompt with strict accessibility validation hooks
-    user_prompt = st.chat_input(
-        "Enter operational query or dispatch request...",
-        help="Interactive input field: Ask the command assistant for immediate logistical navigation instructions."
-    )
+    # Accessibility alternative text for input container
+    st.caption("Interactive input active below. Submit logistical query for instruction workflows.")
+    
+    # Capture prompt safely (Help parameter removed to fix TypeError)
+    user_prompt = st.chat_input("Enter operational query or dispatch request...")
     
     if user_prompt:
         # Sanitize text inputs safely before state processing
